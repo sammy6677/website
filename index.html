@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fasmie – Phone Cases for iPhone &amp; Samsung | Nairobi</title>
+<meta name="description" content="Fasmie sells stylish phone cases for iPhone and Samsung, plus phone accessories. Shop with us in person, on TikTok Live, Jumia or Kilimall, or order on WhatsApp.">
+<meta property="og:title" content="Fasmie – Phone Cases for iPhone & Samsung">
+<meta property="og:description" content="Stylish cases for your phone. Order on WhatsApp or catch us on TikTok Live.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23d2457a'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='800' font-size='20' text-anchor='middle' fill='%23fff'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#f6f3f8; --surface:#ffffff; --sunk:#efeaf4; --line:#e3dceb;
+  --ink:#2b2140; --muted:#685d80;
+  --plum:#33244f; --plum-2:#46336c; --on-plum:#ffffff; --on-plum-2:#d6cbea;
+  --accent:#c43a6f; --accent-hover:#a92f5e; --accent-soft:#fbe6ee; --on-accent:#ffffff;
+  --violet:#6a4cb8; --violet-soft:#ece5fa;
+  --wa:#1f8f4f;
+  --shadow:0 1px 2px rgba(43,33,64,.06),0 8px 24px rgba(43,33,64,.08);
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"Figtree","Segoe UI",system-ui,sans-serif;
+  --r:18px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#15111c; --surface:#1e1828; --sunk:#282133; --line:#372e45;
+  --ink:#f2eef7; --muted:#b4aac6;
+  --plum:#241a36; --plum-2:#352850; --on-plum-2:#c9bde0;
+  --accent:#ff7aa8; --accent-hover:#ff96bb; --accent-soft:#43192d; --on-accent:#2a0716;
+  --violet:#b39bff; --violet-soft:#2c2346;
+  --wa:#4cd387;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.3);
+}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);line-height:1.1;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:var(--plum);color:var(--on-plum)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:800;font-size:1.4rem}
+.logo{width:38px;height:38px;border-radius:11px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-size:1.2rem}
+.links{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-weight:600;font-size:.95rem}
+.links a{text-decoration:none;color:var(--on-plum-2)}
+.links a:hover{color:var(--on-plum)}
+@media (max-width:760px){.links{display:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;transition:background .15s,transform .15s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn:hover{transform:translateY(-1px)}
+.btn-wa{background:var(--wa);color:#fff}
+@media (prefers-color-scheme:dark){.btn-wa{color:#06210f}}
+.btn-accent{background:var(--accent);color:var(--on-accent)}
+.btn-accent:hover{background:var(--accent-hover)}
+.btn-ghost{border-color:currentColor;color:inherit;background:transparent}
+.btn-sm{min-height:42px;padding:8px 16px;font-size:.92rem}
+
+/* hero */
+.hero{background:var(--plum);color:var(--on-plum);padding:56px 0 80px;overflow:hidden;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--on-plum-2);margin-bottom:16px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--accent)}
+@media (prefers-color-scheme:light){.hero h1 em{color:#ff8fb5}}
+.hero p{font-size:1.15rem;color:var(--on-plum-2);max-width:34ch;margin:20px 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.cases{position:relative;height:420px}
+.case{position:absolute;width:190px;height:380px;border-radius:38px;box-shadow:0 20px 50px rgba(0,0,0,.35);overflow:hidden}
+.case .cam{position:absolute;top:18px;left:18px;width:70px;height:70px;border-radius:20px;background:rgba(0,0,0,.28);display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:9px}
+.case .cam i{border-radius:50%;background:rgba(0,0,0,.5);border:3px solid rgba(255,255,255,.25)}
+.c1{left:4%;top:30px;transform:rotate(-9deg);background:#c43a6f}
+.c2{left:34%;top:0;transform:rotate(3deg);background:#f1e4d0;z-index:2}
+.c3{left:62%;top:46px;transform:rotate(11deg);background:#6a4cb8}
+.c1::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 60%,#ff9cbf 0 14px,transparent 15px) 0 0/48px 48px}
+.c2::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 16px,#e3b9c6 16px 22px)}
+.c3::after{content:"";position:absolute;inset:0;background:radial-gradient(circle,#b9a6f0 2px,transparent 3px) 0 0/18px 18px}
+.case .cam{z-index:1}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.cases{height:340px;max-width:440px;width:100%;margin:0 auto}.case{width:150px;height:300px;border-radius:30px}}
+
+/* sections */
+section{padding:84px 0}
+.head{max-width:620px;margin-bottom:40px}
+.head .eyebrow{color:var(--accent)}
+.head h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800}
+.head p{color:var(--muted);margin:14px 0 0;font-size:1.08rem}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.grid3{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--shadow)}
+.card h3{font-size:1.35rem;margin:18px 0 8px}
+.card p{margin:0;color:var(--muted)}
+.ico{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.ico svg{width:28px;height:28px}
+.ico.v{background:var(--violet-soft);color:var(--violet)}
+
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;counter-reset:s;list-style:none;margin:0;padding:0}
+@media (max-width:860px){.steps{grid-template-columns:1fr}}
+.steps li{position:relative;padding-top:66px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;width:48px;height:48px;border-radius:50%;background:var(--plum);color:var(--on-plum);display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:1.3rem}
+@media (prefers-color-scheme:dark){.steps li::before{background:var(--accent);color:var(--on-accent)}}
+.steps h3{font-size:1.25rem;margin-bottom:6px}
+.steps p{margin:0;color:var(--muted)}
+
+.channels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:860px){.channels{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ch{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:6px}
+.ch b{font-family:var(--f-display);font-size:1.2rem}
+.ch span{color:var(--muted);font-size:.95rem}
+
+.final{background:var(--plum);color:var(--on-plum);border-radius:28px;padding:56px 40px;text-align:center}
+.final h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800}
+.final p{color:var(--on-plum-2);margin:14px auto 30px;max-width:44ch;font-size:1.1rem}
+.final .cta{justify-content:center}
+@media (max-width:560px){.final{padding:44px 22px}}
+
+footer{padding:36px 0 48px;color:var(--muted);font-size:.92rem}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+.float-wa{position:fixed;right:18px;bottom:18px;z-index:20;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.float-wa svg{width:30px;height:30px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="#top"><span class="logo" aria-hidden="true">F</span>Fasmie</a>
+    <ul class="links">
+      <li><a href="#shop">What we sell</a></li>
+      <li><a href="#order">How to order</a></li>
+      <li><a href="#where">Where to buy</a></li>
+    </ul>
+    <a class="btn btn-wa btn-sm wa-link" href="https://wa.me/254758235049">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+      <span>Order</span>
+    </a>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Phone cases · Nairobi, Kenya</span>
+        <h1>Your phone, <em>your style.</em></h1>
+        <p>Beautiful, protective cases for iPhone and Samsung, with new designs all the time. Find the one that feels like you.</p>
+        <div class="cta">
+          <a class="btn btn-wa wa-link" href="https://wa.me/254758235049">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+            Order on WhatsApp
+          </a>
+          <a class="btn btn-ghost" href="https://www.tiktok.com/@YOUR_TIKTOK_USERNAME" target="_blank" rel="noopener">Watch us on TikTok Live</a>
+        </div>
+      </div>
+      <div class="cases" aria-hidden="true">
+        <div class="case c1"><div class="cam"><i></i><i></i><i></i></div></div>
+        <div class="case c2"><div class="cam"><i></i><i></i><i></i></div></div>
+        <div class="case c3"><div class="cam"><i></i><i></i><i></i></div></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="shop">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">What we sell</span>
+        <h2>Cases and extras for the phones Kenya loves</h2>
+        <p>Every case is picked for its look and its fit. Tell us your phone model and we'll show you what's in stock.</p>
+      </div>
+      <div class="grid3">
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><circle cx="10" cy="6.5" r="1.5"/></svg></div>
+          <h3>iPhone cases</h3>
+          <p>Cute, bold and classic designs for a wide range of iPhone models.</p>
+        </article>
+        <article class="card">
+          <div class="ico v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M9 6h1M9 8.5h1"/></svg></div>
+          <h3>Samsung cases</h3>
+          <p>Stylish, protective cases for popular Samsung Galaxy phones.</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M8 7h8v5a4 4 0 0 1-8 0Z"/><path d="M12 16v5"/></svg></div>
+          <h3>Accessories</h3>
+          <p>Handy extras to go with your case. Ask us what's available today.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="order" class="alt">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">How to order</span>
+        <h2>Three easy steps</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Send us a message</h3><p>Message us on WhatsApp, or comment while we're live on TikTok.</p></li>
+        <li><h3>Tell us your phone model</h3><p>For example "iPhone 13" or "Samsung A15". We'll send photos of the cases that fit.</p></li>
+        <li><h3>Pick your favourite</h3><p>Choose your design, confirm the price, and your new case is ready for you.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="where">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Where to buy</span>
+        <h2>Shop the way you like</h2>
+      </div>
+      <div class="channels">
+        <div class="ch"><b>In person</b><span>Walk in, see the cases and pick yours.</span></div>
+        <div class="ch"><b>TikTok Live</b><span>Watch new designs live and order on the spot.</span></div>
+        <div class="ch"><b>Jumia</b><span>Find Fasmie cases on Jumia.</span></div>
+        <div class="ch"><b>Kilimall</b><span>Find Fasmie cases on Kilimall.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="final">
+        <h2>Found your style?</h2>
+        <p>Send us your phone model on WhatsApp and we'll show you the cases that fit.</p>
+        <div class="cta">
+          <a class="btn btn-wa wa-link" href="https://wa.me/254758235049">Chat on WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.tiktok.com/@YOUR_TIKTOK_USERNAME" target="_blank" rel="noopener">Follow on TikTok</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="yr">2026</span> Fasmie · Phone cases, Nairobi</span>
+    <span>WhatsApp: <a href="https://wa.me/254758235049" class="wa-link">+254 758 235 049</a></span>
+  </div>
+</footer>
+
+<a class="float-wa wa-link" href="https://wa.me/254758235049" aria-label="Chat with Fasmie on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script>
+  // WhatsApp links open with a ready-made message
+  var msg = encodeURIComponent("Hi Fasmie! I'd like a phone case. My phone model is: ");
+  document.querySelectorAll(".wa-link").forEach(function (a) { a.href = "https://wa.me/254758235049?text=" + msg; a.target = "_blank"; a.rel = "noopener"; });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
