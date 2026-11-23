@@ -124,6 +124,33 @@ section{padding:84px 0}
 footer{padding:36px 0 48px;color:var(--muted);font-size:.92rem}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
+/* catalogue */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.filters{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:10px}
+.seg{display:inline-flex;background:var(--sunk);border-radius:999px;padding:4px}
+.seg button{font:inherit;font-weight:700;font-size:.95rem;border:0;background:transparent;color:var(--muted);padding:10px 18px;border-radius:999px;cursor:pointer;min-height:44px}
+.seg button small{font-weight:600;opacity:.75;margin-left:4px}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.find{flex:1;max-width:340px;min-width:220px}
+.find input{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:12px 18px;min-height:48px}
+.find input:focus{outline:3px solid var(--accent);outline-offset:1px}
+.count{color:var(--muted);font-size:.92rem;margin:4px 0 18px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+@media (max-width:560px){.pgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.find{max-width:none}}
+.pc{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.pc[hidden]{display:none}
+.ph{position:relative;aspect-ratio:3/4;background:var(--sunk)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.no{position:absolute;top:10px;left:10px;background:rgba(20,14,30,.78);color:#fff;font-weight:700;font-size:.8rem;padding:3px 9px;border-radius:8px}
+.pb{padding:14px 14px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pb h3{font-family:var(--f-body);font-size:1rem;font-weight:700;letter-spacing:0;line-height:1.3}
+.fits{margin:0;font-size:.82rem;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.fits b{color:var(--ink);font-weight:600}
+.buy{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.price{font-family:var(--f-display);font-weight:800;font-size:1.2rem;color:var(--accent)}
+.empty,.note{color:var(--muted);text-align:center;margin:22px 0 0}
+.note{font-size:.9rem}
+@media (max-width:560px){.pb{padding:10px 10px 12px}.buy .btn{width:100%}}
 .float-wa{position:fixed;right:18px;bottom:18px;z-index:20;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
 .float-wa svg{width:30px;height:30px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}.btn:hover{transform:none}}
@@ -135,7 +162,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:.92rem}
   <nav class="wrap nav" aria-label="Main">
     <a class="brand" href="#top"><span class="logo" aria-hidden="true">F</span>Fasmie</a>
     <ul class="links">
-      <li><a href="#shop">What we sell</a></li>
+      <li><a href="#cases">Shop cases</a></li>
       <li><a href="#order">How to order</a></li>
       <li><a href="#where">Where to buy</a></li>
     </ul>
@@ -158,7 +185,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:.92rem}
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
             Order on WhatsApp
           </a>
-          <a class="btn btn-ghost" href="https://www.tiktok.com/@YOUR_TIKTOK_USERNAME" target="_blank" rel="noopener">Watch us on TikTok Live</a>
+          <a class="btn btn-ghost" href="#cases">See cases · KSh 500</a>
         </div>
       </div>
       <div class="cases" aria-hidden="true">
@@ -196,7 +223,566 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:.92rem}
     </div>
   </section>
 
-  <section id="order" class="alt">
+  <section id="cases" class="alt">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Available now</span>
+        <h2>Every case just KSh 500</h2>
+        <p>67 designs in stock for iPhone and Samsung. Pick your design, check it fits your phone, and order on WhatsApp.</p>
+      </div>
+      <div class="filters">
+        <div class="seg" role="group" aria-label="Show cases for">
+          <button type="button" data-f="all" aria-pressed="true">All <small>67</small></button>
+          <button type="button" data-f="iphone" aria-pressed="false">iPhone <small>60</small></button>
+          <button type="button" data-f="samsung" aria-pressed="false">Samsung <small>7</small></button>
+        </div>
+        <label class="find"><span class="sr">Your phone model</span><input type="search" id="find" placeholder="Your model, e.g. 13 Pro or A16" autocomplete="off"></label>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <div class="pgrid" id="pgrid">
+        <article class="pc" data-brand="iphone" data-models="11 12 pro 13 mini 14 pro 15 15 pro 15 pro max 16 17 pro max 18 pro max x/xs">
+          <div class="ph"><img src="cases/ip-1.jpg" alt="iPhone case: White magnolia branches" loading="lazy" width="300" height="400"><span class="no">#1</span></div>
+          <div class="pb">
+            <h3>White magnolia branches</h3>
+            <p class="fits" title="iPhone 11, iPhone 12 Pro, iPhone 13 mini, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone X/XS"><b>Fits iPhone:</b> 11, 12 Pro, 13 mini, 14 Pro, 15, 15 Pro, 15 Pro Max, 16, 17 Pro Max, 18 Pro Max, X/XS</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#1 White magnolia branches">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 12 pro 12 pro max 13 13 pro 14 14 pro 14 pro max 15 15 pro 15 pro max 16 16 pro 16 pro max 17 17 pro 17 pro max">
+          <div class="ph"><img src="cases/ip-2.jpg" alt="iPhone case: Sticker label collage" loading="lazy" width="300" height="400"><span class="no">#2</span></div>
+          <div class="pb">
+            <h3>Sticker label collage</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro, iPhone 17 Pro Max"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13, 13 Pro, 14, 14 Pro, 14 Pro Max, 15, 15 Pro, 15 Pro Max, 16, 16 Pro, 16 Pro Max, 17, 17 Pro, 17 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#2 Sticker label collage">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 12 12 pro 13 pro 14 15 15 pro 15 pro max 16 16 pro 16 pro max">
+          <div class="ph"><img src="cases/ip-3.jpg" alt="iPhone case: Dark purple hearts" loading="lazy" width="300" height="400"><span class="no">#3</span></div>
+          <div class="pb">
+            <h3>Dark purple hearts</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 12, iPhone 12 Pro, iPhone 13 Pro, iPhone 14, iPhone 15, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max"><b>Fits iPhone:</b> 11, 11 Pro, 12, 12 Pro, 13 Pro, 14, 15, 15 Pro, 15 Pro Max, 16, 16 Pro, 16 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#3 Dark purple hearts">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro 12 pro max 13 pro 14 14 pro 14 pro max 15 15 pro 16 16 pro 16 pro max 17 17 pro">
+          <div class="ph"><img src="cases/ip-4.jpg" alt="iPhone case: “AIR” streetwear text" loading="lazy" width="300" height="400"><span class="no">#4</span></div>
+          <div class="pb">
+            <h3>“AIR” streetwear text</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13 Pro, 14, 14 Pro, 14 Pro Max, 15, 15 Pro, 16, 16 Pro, 16 Pro Max, 17, 17 Pro</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#4 “AIR” streetwear text">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 pro max 14 14 pro 14 pro max 15 pro 15 pro max 16 16 pro max 17 pro 17 pro max x/xs xs max">
+          <div class="ph"><img src="cases/ip-5.jpg" alt="iPhone case: Red &amp; blue tribal pattern" loading="lazy" width="300" height="400"><span class="no">#5</span></div>
+          <div class="pb">
+            <h3>Red &amp; blue tribal pattern</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 Pro Max, iPhone 14, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro Max, iPhone 17 Pro, iPhone 17 Pro Max, iPhone X/XS, iPhone XS Max"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12 Pro Max, 14, 14 Pro, 14 Pro Max, 15 Pro, 15 Pro Max, 16, 16 Pro Max, 17 Pro, 17 Pro Max, X/XS, XS Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#5 Red &amp; blue tribal pattern">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 pro 13 pro max 14 pro 15 pro 15 pro max 16 17 pro 18 pro max">
+          <div class="ph"><img src="cases/ip-6.jpg" alt="iPhone case: Pink glass apple &amp; fork" loading="lazy" width="300" height="400"><span class="no">#6</span></div>
+          <div class="pb">
+            <h3>Pink glass apple &amp; fork</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 Pro, iPhone 13 Pro Max, iPhone 14 Pro, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 17 Pro, iPhone 18 Pro Max"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12 Pro, 13 Pro Max, 14 Pro, 15 Pro, 15 Pro Max, 16, 17 Pro, 18 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#6 Pink glass apple &amp; fork">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 12 pro 13 13 pro 14 14 pro 16 16 pro 16 pro max 17">
+          <div class="ph"><img src="cases/ip-7.jpg" alt="iPhone case: Purple hearts, roses &amp; butterflies" loading="lazy" width="300" height="400"><span class="no">#7</span></div>
+          <div class="pb">
+            <h3>Purple hearts, roses &amp; butterflies</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12, 12 Pro, 13, 13 Pro, 14, 14 Pro, 16, 16 Pro, 16 Pro Max, 17</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#7 Purple hearts, roses &amp; butterflies">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 12 12 pro 13 14 14 pro 14 pro max 15 pro 16 pro 16 pro max">
+          <div class="ph"><img src="cases/ip-8.jpg" alt="iPhone case: Blue daisies" loading="lazy" width="300" height="400"><span class="no">#8</span></div>
+          <div class="pb">
+            <h3>Blue daisies</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 14, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15 Pro, iPhone 16 Pro, iPhone 16 Pro Max"><b>Fits iPhone:</b> 11 Pro, 12, 12 Pro, 13, 14, 14 Pro, 14 Pro Max, 15 Pro, 16 Pro, 16 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#8 Blue daisies">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro 12 pro max 13 pro 13 pro max 14 pro 15 pro max 16 16 pro 17">
+          <div class="ph"><img src="cases/ip-9.jpg" alt="iPhone case: “Lucky me” envelope &amp; red roses" loading="lazy" width="300" height="400"><span class="no">#9</span></div>
+          <div class="pb">
+            <h3>“Lucky me” envelope &amp; red roses</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13 Pro, iPhone 13 Pro Max, iPhone 14 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone 17"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13 Pro, 13 Pro Max, 14 Pro, 15 Pro Max, 16, 16 Pro, 17</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#9 “Lucky me” envelope &amp; red roses">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 12 pro 12 pro max 13 pro 14 14 pro 14 pro max 15 15 pro 15 pro max 16 16 pro 16 pro max 17 17 pro 17 pro max">
+          <div class="ph"><img src="cases/ip-10.jpg" alt="iPhone case: Air ticket “Now × Future”" loading="lazy" width="300" height="400"><span class="no">#10</span></div>
+          <div class="pb">
+            <h3>Air ticket “Now × Future”</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro, iPhone 17 Pro Max"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13 Pro, 14, 14 Pro, 14 Pro Max, 15, 15 Pro, 15 Pro Max, 16, 16 Pro, 16 Pro Max, 17, 17 Pro, 17 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#10 Air ticket “Now × Future”">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 13 pro max 14 14 pro">
+          <div class="ph"><img src="cases/ip-11.jpg" alt="iPhone case: Butterfly with roses – Purple" loading="lazy" width="300" height="400"><span class="no">#11</span></div>
+          <div class="pb">
+            <h3>Butterfly with roses – Purple</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 13 Pro Max, iPhone 14, iPhone 14 Pro"><b>Fits iPhone:</b> 11 Pro, 13 Pro Max, 14, 14 Pro</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#11 Butterfly with roses – Purple">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro max 15 pro 16 16 pro">
+          <div class="ph"><img src="cases/ip-12.jpg" alt="iPhone case: Butterfly with roses – Pink" loading="lazy" width="300" height="400"><span class="no">#12</span></div>
+          <div class="pb">
+            <h3>Butterfly with roses – Pink</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro Max, iPhone 15 Pro, iPhone 16, iPhone 16 Pro"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro Max, 15 Pro, 16, 16 Pro</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#12 Butterfly with roses – Pink">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 12 17 pro max">
+          <div class="ph"><img src="cases/ip-13.jpg" alt="iPhone case: Leopard with glitter – Purple" loading="lazy" width="300" height="400"><span class="no">#13</span></div>
+          <div class="pb">
+            <h3>Leopard with glitter – Purple</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 12, iPhone 17 Pro Max"><b>Fits iPhone:</b> 11, 11 Pro, 12, 17 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#13 Leopard with glitter – Purple">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro max 12 16 pro 16 pro max 17">
+          <div class="ph"><img src="cases/ip-14.jpg" alt="iPhone case: Leopard with glitter – Pink" loading="lazy" width="300" height="400"><span class="no">#14</span></div>
+          <div class="pb">
+            <h3>Leopard with glitter – Pink</h3>
+            <p class="fits" title="iPhone 11 Pro Max, iPhone 12, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17"><b>Fits iPhone:</b> 11 Pro Max, 12, 16 Pro, 16 Pro Max, 17</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#14 Leopard with glitter – Pink">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="13 14 pro 17 pro max">
+          <div class="ph"><img src="cases/ip-15.jpg" alt="iPhone case: Beige plaid check" loading="lazy" width="300" height="400"><span class="no">#15</span></div>
+          <div class="pb">
+            <h3>Beige plaid check</h3>
+            <p class="fits" title="iPhone 13, iPhone 14 Pro, iPhone 17 Pro Max"><b>Fits iPhone:</b> 13, 14 Pro, 17 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#15 Beige plaid check">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="13 pro max 14 pro 14 pro max 15 pro 16 pro 16 pro max">
+          <div class="ph"><img src="cases/ip-16.jpg" alt="iPhone case: Pink &amp; white bows" loading="lazy" width="300" height="400"><span class="no">#16</span></div>
+          <div class="pb">
+            <h3>Pink &amp; white bows</h3>
+            <p class="fits" title="iPhone 13 Pro Max, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15 Pro, iPhone 16 Pro, iPhone 16 Pro Max"><b>Fits iPhone:</b> 13 Pro Max, 14 Pro, 14 Pro Max, 15 Pro, 16 Pro, 16 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#16 Pink &amp; white bows">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 pro max 13 pro 13 pro max 14 14 pro max 15 15 pro 15 pro max 16 16 pro max 17 pro max">
+          <div class="ph"><img src="cases/ip-17.jpg" alt="iPhone case: Clock &amp; circuit gears" loading="lazy" width="300" height="400"><span class="no">#17</span></div>
+          <div class="pb">
+            <h3>Clock &amp; circuit gears</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 Pro Max, iPhone 13 Pro, iPhone 13 Pro Max, iPhone 14, iPhone 14 Pro Max, iPhone 15, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro Max, iPhone 17 Pro Max"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12 Pro Max, 13 Pro, 13 Pro Max, 14, 14 Pro Max, 15, 15 Pro, 15 Pro Max, 16, 16 Pro Max, 17 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#17 Clock &amp; circuit gears">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro 12 pro max 13 13 pro 14 14 plus 14 pro 14 pro max 15 15 plus 15 pro 15 pro max 16 16 pro 16 pro max 17 17 pro 17 pro max">
+          <div class="ph"><img src="cases/ip-18.jpg" alt="iPhone case: Clear MagSafe – Green" loading="lazy" width="300" height="400"><span class="no">#18</span></div>
+          <div class="pb">
+            <h3>Clear MagSafe – Green</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Plus, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Plus, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro, iPhone 17 Pro Max"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13, 13 Pro, 14, 14 Plus, 14 Pro, 14 Pro Max, 15, 15 Plus, 15 Pro, 15 Pro Max, 16, 16 Pro, 16 Pro Max, 17, 17 Pro, 17 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#18 Clear MagSafe – Green">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro 12 pro max 13 13 pro 13 pro max 14 14 plus 14 pro 15 15 plus 15 pro 15 pro max 16 16 pro 16 pro max 17 17 pro 17 pro max">
+          <div class="ph"><img src="cases/ip-19.jpg" alt="iPhone case: Clear MagSafe – Red" loading="lazy" width="300" height="400"><span class="no">#19</span></div>
+          <div class="pb">
+            <h3>Clear MagSafe – Red</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13, iPhone 13 Pro, iPhone 13 Pro Max, iPhone 14, iPhone 14 Plus, iPhone 14 Pro, iPhone 15, iPhone 15 Plus, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro, iPhone 17 Pro Max"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13, 13 Pro, 13 Pro Max, 14, 14 Plus, 14 Pro, 15, 15 Plus, 15 Pro, 15 Pro Max, 16, 16 Pro, 16 Pro Max, 17, 17 Pro, 17 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#19 Clear MagSafe – Red">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro 12 pro max 13 13 pro 13 pro max 14 14 plus 14 pro 14 pro max 15 15 plus 15 pro 15 pro max 16 16 pro 16 pro max 17 17 pro 17 pro max">
+          <div class="ph"><img src="cases/ip-20.jpg" alt="iPhone case: Clear MagSafe – Blue" loading="lazy" width="300" height="400"><span class="no">#20</span></div>
+          <div class="pb">
+            <h3>Clear MagSafe – Blue</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13, iPhone 13 Pro, iPhone 13 Pro Max, iPhone 14, iPhone 14 Plus, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Plus, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro, iPhone 17 Pro Max"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13, 13 Pro, 13 Pro Max, 14, 14 Plus, 14 Pro, 14 Pro Max, 15, 15 Plus, 15 Pro, 15 Pro Max, 16, 16 Pro, 16 Pro Max, 17, 17 Pro, 17 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#20 Clear MagSafe – Blue">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 12 pro 12 pro max 13 13 pro 14 14 plus 14 pro 14 pro max 15 15 plus 15 pro 15 pro max 16 16 pro 16 pro max 17 17 pro max">
+          <div class="ph"><img src="cases/ip-21.jpg" alt="iPhone case: Clear MagSafe – Black" loading="lazy" width="300" height="400"><span class="no">#21</span></div>
+          <div class="pb">
+            <h3>Clear MagSafe – Black</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Plus, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Plus, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro Max"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13, 13 Pro, 14, 14 Plus, 14 Pro, 14 Pro Max, 15, 15 Plus, 15 Pro, 15 Pro Max, 16, 16 Pro, 16 Pro Max, 17, 17 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#21 Clear MagSafe – Black">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 12 pro 12 pro max 13 13 pro 13 pro max 14 14 plus 14 pro 14 pro max 15 15 plus 15 pro 15 pro max 16 16 pro 16 pro max 17 17 pro 17 pro max">
+          <div class="ph"><img src="cases/ip-22.jpg" alt="iPhone case: Clear MagSafe – Pink" loading="lazy" width="300" height="400"><span class="no">#22</span></div>
+          <div class="pb">
+            <h3>Clear MagSafe – Pink</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13, iPhone 13 Pro, iPhone 13 Pro Max, iPhone 14, iPhone 14 Plus, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Plus, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro, iPhone 17 Pro Max"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13, 13 Pro, 13 Pro Max, 14, 14 Plus, 14 Pro, 14 Pro Max, 15, 15 Plus, 15 Pro, 15 Pro Max, 16, 16 Pro, 16 Pro Max, 17, 17 Pro, 17 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#22 Clear MagSafe – Pink">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro 12 pro max 13 13 pro 13 pro max 14 14 plus 14 pro 14 pro max 15 15 plus 15 pro 15 pro max 16 16 pro 16 pro max 17 17 pro max">
+          <div class="ph"><img src="cases/ip-23.jpg" alt="iPhone case: Clear MagSafe – White" loading="lazy" width="300" height="400"><span class="no">#23</span></div>
+          <div class="pb">
+            <h3>Clear MagSafe – White</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13, iPhone 13 Pro, iPhone 13 Pro Max, iPhone 14, iPhone 14 Plus, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Plus, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro Max"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13, 13 Pro, 13 Pro Max, 14, 14 Plus, 14 Pro, 14 Pro Max, 15, 15 Plus, 15 Pro, 15 Pro Max, 16, 16 Pro, 16 Pro Max, 17, 17 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#23 Clear MagSafe – White">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 12 pro 13 mini 16 x/xs">
+          <div class="ph"><img src="cases/ip-24.jpg" alt="iPhone case: Fisherman on a boat" loading="lazy" width="300" height="400"><span class="no">#24</span></div>
+          <div class="pb">
+            <h3>Fisherman on a boat</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 13 mini, iPhone 16, iPhone X/XS"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12, 12 Pro, 13 mini, 16, X/XS</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#24 Fisherman on a boat">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 pro 13 13 mini 14 14 pro max 15 pro 15 pro max 16 16 pro 16 pro max x/xs xr xs max">
+          <div class="ph"><img src="cases/ip-25.jpg" alt="iPhone case: “Rich” green text" loading="lazy" width="300" height="400"><span class="no">#25</span></div>
+          <div class="pb">
+            <h3>“Rich” green text</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 14, iPhone 14 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone X/XS, iPhone XR, iPhone XS Max"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12 Pro, 13, 13 mini, 14, 14 Pro Max, 15 Pro, 15 Pro Max, 16, 16 Pro, 16 Pro Max, X/XS, XR, XS Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#25 “Rich” green text">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 pro 13 mini 15 pro max 16 x/xs xr xs max">
+          <div class="ph"><img src="cases/ip-26.jpg" alt="iPhone case: “Lucky” purple moon &amp; stars" loading="lazy" width="300" height="400"><span class="no">#26</span></div>
+          <div class="pb">
+            <h3>“Lucky” purple moon &amp; stars</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 Pro, iPhone 13 mini, iPhone 15 Pro Max, iPhone 16, iPhone X/XS, iPhone XR, iPhone XS Max"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12 Pro, 13 mini, 15 Pro Max, 16, X/XS, XR, XS Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#26 “Lucky” purple moon &amp; stars">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro max 12 pro 13 13 pro 14 14 pro 15 pro 16">
+          <div class="ph"><img src="cases/ip-27.jpg" alt="iPhone case: Colourful butterflies &amp; flowers" loading="lazy" width="300" height="400"><span class="no">#27</span></div>
+          <div class="pb">
+            <h3>Colourful butterflies &amp; flowers</h3>
+            <p class="fits" title="iPhone 11 Pro Max, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15 Pro, iPhone 16"><b>Fits iPhone:</b> 11 Pro Max, 12 Pro, 13, 13 Pro, 14, 14 Pro, 15 Pro, 16</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#27 Colourful butterflies &amp; flowers">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro max">
+          <div class="ph"><img src="cases/ip-28.jpg" alt="iPhone case: “love hart” black rose" loading="lazy" width="300" height="400"><span class="no">#28</span></div>
+          <div class="pb">
+            <h3>“love hart” black rose</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro Max"><b>Fits iPhone:</b> 11, 11 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#28 “love hart” black rose">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro 12 pro max 13 pro 14 14 pro 14 pro max 15 15 pro 15 pro max 16 16 pro 16 pro max 17 17 pro max">
+          <div class="ph"><img src="cases/ip-29.jpg" alt="iPhone case: Travel ticket stickers" loading="lazy" width="300" height="400"><span class="no">#29</span></div>
+          <div class="pb">
+            <h3>Travel ticket stickers</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro Max"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13 Pro, 14, 14 Pro, 14 Pro Max, 15, 15 Pro, 15 Pro Max, 16, 16 Pro, 16 Pro Max, 17, 17 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#29 Travel ticket stickers">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro 12 pro max 13 13 pro 14 14 pro max 15 15 pro 16 16 pro 16 pro max 17">
+          <div class="ph"><img src="cases/ip-30.jpg" alt="iPhone case: Compass" loading="lazy" width="300" height="400"><span class="no">#30</span></div>
+          <div class="pb">
+            <h3>Compass</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro Max, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13, 13 Pro, 14, 14 Pro Max, 15, 15 Pro, 16, 16 Pro, 16 Pro Max, 17</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#30 Compass">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro max 14 14 pro 14 pro max 15 15 pro 16 16 pro max 17 17 pro">
+          <div class="ph"><img src="cases/ip-31.jpg" alt="iPhone case: “Mountain” snowy peak" loading="lazy" width="300" height="400"><span class="no">#31</span></div>
+          <div class="pb">
+            <h3>“Mountain” snowy peak</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro Max, iPhone 14, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro Max, 14, 14 Pro, 14 Pro Max, 15, 15 Pro, 16, 16 Pro Max, 17, 17 Pro</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#31 “Mountain” snowy peak">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro 12 pro max 13 13 pro 13 pro max 14 14 pro 14 pro max 15 pro 16 16 pro 16 pro max 17 17 pro">
+          <div class="ph"><img src="cases/ip-32.jpg" alt="iPhone case: Rainbow butterfly &amp; pink rose" loading="lazy" width="300" height="400"><span class="no">#32</span></div>
+          <div class="pb">
+            <h3>Rainbow butterfly &amp; pink rose</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13, iPhone 13 Pro, iPhone 13 Pro Max, iPhone 14, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13, 13 Pro, 13 Pro Max, 14, 14 Pro, 14 Pro Max, 15 Pro, 16, 16 Pro, 16 Pro Max, 17, 17 Pro</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#32 Rainbow butterfly &amp; pink rose">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro 12 pro max 13 pro 14 15 15 pro 16 16 pro 16 pro max 17 17 pro">
+          <div class="ph"><img src="cases/ip-33.jpg" alt="iPhone case: Glowing butterfly forest" loading="lazy" width="300" height="400"><span class="no">#33</span></div>
+          <div class="pb">
+            <h3>Glowing butterfly forest</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13 Pro, iPhone 14, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13 Pro, 14, 15, 15 Pro, 16, 16 Pro, 16 Pro Max, 17, 17 Pro</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#33 Glowing butterfly forest">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 13 pro 14 14 pro 15 16 pro">
+          <div class="ph"><img src="cases/ip-34.jpg" alt="iPhone case: Brown leopard waves with glitter" loading="lazy" width="300" height="400"><span class="no">#34</span></div>
+          <div class="pb">
+            <h3>Brown leopard waves with glitter</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 16 Pro"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 13 Pro, 14, 14 Pro, 15, 16 Pro</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#34 Brown leopard waves with glitter">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro 12 pro max 13 13 pro 14 14 pro max 15 pro 16 16 pro 16 pro max 17 pro">
+          <div class="ph"><img src="cases/ip-35.jpg" alt="iPhone case: Blue butterfly &amp; white blossoms" loading="lazy" width="300" height="400"><span class="no">#35</span></div>
+          <div class="pb">
+            <h3>Blue butterfly &amp; white blossoms</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro Max, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17 Pro"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13, 13 Pro, 14, 14 Pro Max, 15 Pro, 16, 16 Pro, 16 Pro Max, 17 Pro</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#35 Blue butterfly &amp; white blossoms">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro 12 pro max 13 13 pro 13 pro max 14 14 pro 14 pro max 15 15 pro 16 16 pro 16 pro max">
+          <div class="ph"><img src="cases/ip-36.jpg" alt="iPhone case: Purple watercolour petals" loading="lazy" width="300" height="400"><span class="no">#36</span></div>
+          <div class="pb">
+            <h3>Purple watercolour petals</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13, iPhone 13 Pro, iPhone 13 Pro Max, iPhone 14, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13, 13 Pro, 13 Pro Max, 14, 14 Pro, 14 Pro Max, 15, 15 Pro, 16, 16 Pro, 16 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#36 Purple watercolour petals">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro 12 pro max 14 14 pro 15 16 16 pro 16 pro max 17">
+          <div class="ph"><img src="cases/ip-37.jpg" alt="iPhone case: Butterfly, tropical leaves &amp; purple flower" loading="lazy" width="300" height="400"><span class="no">#37</span></div>
+          <div class="pb">
+            <h3>Butterfly, tropical leaves &amp; purple flower</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 14, 14 Pro, 15, 16, 16 Pro, 16 Pro Max, 17</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#37 Butterfly, tropical leaves &amp; purple flower">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 12 pro max 13 14 14 pro 14 pro max 15 15 pro 15 pro max 16 pro 16 pro max 17 pro 17 pro max 18 pro max">
+          <div class="ph"><img src="cases/ip-38.jpg" alt="iPhone case: Pink beach, starfish &amp; turtles" loading="lazy" width="300" height="400"><span class="no">#38</span></div>
+          <div class="pb">
+            <h3>Pink beach, starfish &amp; turtles</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro Max, iPhone 13, iPhone 14, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17 Pro, iPhone 17 Pro Max, iPhone 18 Pro Max"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12, 12 Pro Max, 13, 14, 14 Pro, 14 Pro Max, 15, 15 Pro, 15 Pro Max, 16 Pro, 16 Pro Max, 17 Pro, 17 Pro Max, 18 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#38 Pink beach, starfish &amp; turtles">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 12 12 pro max 13 pro 14 pro 15 15 plus 15 pro max 16 16 pro 16 pro max 17 pro max 18 pro max">
+          <div class="ph"><img src="cases/ip-39.jpg" alt="iPhone case: Blue &amp; gold marble" loading="lazy" width="300" height="400"><span class="no">#39</span></div>
+          <div class="pb">
+            <h3>Blue &amp; gold marble</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 12, iPhone 12 Pro Max, iPhone 13 Pro, iPhone 14 Pro, iPhone 15, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max"><b>Fits iPhone:</b> 11 Pro, 12, 12 Pro Max, 13 Pro, 14 Pro, 15, 15 Plus, 15 Pro Max, 16, 16 Pro, 16 Pro Max, 17 Pro Max, 18 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#39 Blue &amp; gold marble">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro max">
+          <div class="ph"><img src="cases/ip-40.jpg" alt="iPhone case: Gold glitter leopard" loading="lazy" width="300" height="400"><span class="no">#40</span></div>
+          <div class="pb">
+            <h3>Gold glitter leopard</h3>
+            <p class="fits" title="iPhone 11 Pro Max"><b>Fits iPhone:</b> 11 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#40 Gold glitter leopard">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 12 pro 16 x/xs xr xs max">
+          <div class="ph"><img src="cases/ip-41.jpg" alt="iPhone case: Black &amp; white smoke marble" loading="lazy" width="300" height="400"><span class="no">#41</span></div>
+          <div class="pb">
+            <h3>Black &amp; white smoke marble</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 16, iPhone X/XS, iPhone XR, iPhone XS Max"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12, 12 Pro, 16, X/XS, XR, XS Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#41 Black &amp; white smoke marble">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 12 mini 13 13 pro 13 mini 14 pro 14 pro max 15 15 pro 16 16 pro x/xs xr xs max">
+          <div class="ph"><img src="cases/ip-42.jpg" alt="iPhone case: Astronaut on black &amp; blue" loading="lazy" width="300" height="400"><span class="no">#42</span></div>
+          <div class="pb">
+            <h3>Astronaut on black &amp; blue</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 mini, iPhone 13, iPhone 13 Pro, iPhone 13 mini, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone X/XS, iPhone XR, iPhone XS Max"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12, 12 mini, 13, 13 Pro, 13 mini, 14 Pro, 14 Pro Max, 15, 15 Pro, 16, 16 Pro, X/XS, XR, XS Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#42 Astronaut on black &amp; blue">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 12 mini 13 mini 15 16 x/xs xs max">
+          <div class="ph"><img src="cases/ip-43.jpg" alt="iPhone case: Purple butterflies “you’re so special”" loading="lazy" width="300" height="400"><span class="no">#43</span></div>
+          <div class="pb">
+            <h3>Purple butterflies “you’re so special”</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 mini, iPhone 13 mini, iPhone 15, iPhone 16, iPhone X/XS, iPhone XS Max"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12, 12 mini, 13 mini, 15, 16, X/XS, XS Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#43 Purple butterflies “you’re so special”">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro 12 pro max 12 mini 13 13 pro 13 mini 14 14 pro 14 pro max 15 pro 15 pro max 16 x/xs xr xs max">
+          <div class="ph"><img src="cases/ip-44.jpg" alt="iPhone case: Volcano at night" loading="lazy" width="300" height="400"><span class="no">#44</span></div>
+          <div class="pb">
+            <h3>Volcano at night</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12 mini, iPhone 13, iPhone 13 Pro, iPhone 13 mini, iPhone 14, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone X/XS, iPhone XR, iPhone XS Max"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 12 mini, 13, 13 Pro, 13 mini, 14, 14 Pro, 14 Pro Max, 15 Pro, 15 Pro Max, 16, X/XS, XR, XS Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#44 Volcano at night">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro max 12 pro 16">
+          <div class="ph"><img src="cases/ip-45.jpg" alt="iPhone case: Blue &amp; gold floral tree" loading="lazy" width="300" height="400"><span class="no">#45</span></div>
+          <div class="pb">
+            <h3>Blue &amp; gold floral tree</h3>
+            <p class="fits" title="iPhone 11 Pro Max, iPhone 12 Pro, iPhone 16"><b>Fits iPhone:</b> 11 Pro Max, 12 Pro, 16</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#45 Blue &amp; gold floral tree">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 11 pro max 12 12 pro max 13 pro 14 pro 15 15 pro">
+          <div class="ph"><img src="cases/ip-46.jpg" alt="iPhone case: Big blue flowers &amp; strawberries" loading="lazy" width="300" height="400"><span class="no">#46</span></div>
+          <div class="pb">
+            <h3>Big blue flowers &amp; strawberries</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro Max, iPhone 13 Pro, iPhone 14 Pro, iPhone 15, iPhone 15 Pro"><b>Fits iPhone:</b> 11, 11 Pro, 11 Pro Max, 12, 12 Pro Max, 13 Pro, 14 Pro, 15, 15 Pro</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#46 Big blue flowers &amp; strawberries">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro max 12 12 pro 12 pro max 13 13 pro 14 15 pro 15 pro max">
+          <div class="ph"><img src="cases/ip-47.jpg" alt="iPhone case: Colourful flower field" loading="lazy" width="300" height="400"><span class="no">#47</span></div>
+          <div class="pb">
+            <h3>Colourful flower field</h3>
+            <p class="fits" title="iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 15 Pro, iPhone 15 Pro Max"><b>Fits iPhone:</b> 11 Pro Max, 12, 12 Pro, 12 Pro Max, 13, 13 Pro, 14, 15 Pro, 15 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#47 Colourful flower field">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 11 pro 12 12 pro 12 pro max 13 pro 13 pro max 14 pro max 15 pro">
+          <div class="ph"><img src="cases/ip-49.jpg" alt="iPhone case: Pink leopard spots" loading="lazy" width="300" height="400"><span class="no">#49</span></div>
+          <div class="pb">
+            <h3>Pink leopard spots</h3>
+            <p class="fits" title="iPhone 11, iPhone 11 Pro, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13 Pro, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 15 Pro"><b>Fits iPhone:</b> 11, 11 Pro, 12, 12 Pro, 12 Pro Max, 13 Pro, 13 Pro Max, 14 Pro Max, 15 Pro</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#49 Pink leopard spots">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 12 12 pro 13 mini 15 pro max 16 pro">
+          <div class="ph"><img src="cases/ip-50.jpg" alt="iPhone case: Black butterfly" loading="lazy" width="300" height="400"><span class="no">#50</span></div>
+          <div class="pb">
+            <h3>Black butterfly</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 12, iPhone 12 Pro, iPhone 13 mini, iPhone 15 Pro Max, iPhone 16 Pro"><b>Fits iPhone:</b> 11 Pro, 12, 12 Pro, 13 mini, 15 Pro Max, 16 Pro</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#50 Black butterfly">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="14 pro max 16 16 pro x/xs xr xs max">
+          <div class="ph"><img src="cases/ip-52.jpg" alt="iPhone case: Pink lipstick kisses" loading="lazy" width="300" height="400"><span class="no">#52</span></div>
+          <div class="pb">
+            <h3>Pink lipstick kisses</h3>
+            <p class="fits" title="iPhone 14 Pro Max, iPhone 16, iPhone 16 Pro, iPhone X/XS, iPhone XR, iPhone XS Max"><b>Fits iPhone:</b> 14 Pro Max, 16, 16 Pro, X/XS, XR, XS Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#52 Pink lipstick kisses">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 12 12 pro 12 pro max 12 mini 13 mini 14 pro max 15 15 pro max 16 16 pro x/xs xr xs max">
+          <div class="ph"><img src="cases/ip-53.jpg" alt="iPhone case: “Pretty Butterfly” white butterflies (smoky)" loading="lazy" width="300" height="400"><span class="no">#53</span></div>
+          <div class="pb">
+            <h3>“Pretty Butterfly” white butterflies (smoky)</h3>
+            <p class="fits" title="iPhone 11, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12 mini, iPhone 13 mini, iPhone 14 Pro Max, iPhone 15, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone X/XS, iPhone XR, iPhone XS Max"><b>Fits iPhone:</b> 11, 12, 12 Pro, 12 Pro Max, 12 mini, 13 mini, 14 Pro Max, 15, 15 Pro Max, 16, 16 Pro, X/XS, XR, XS Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#53 “Pretty Butterfly” white butterflies (smoky)">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 13 mini 14 16 x/xs xr xs max">
+          <div class="ph"><img src="cases/ip-54.jpg" alt="iPhone case: Blue butterflies, clear blue wavy" loading="lazy" width="300" height="400"><span class="no">#54</span></div>
+          <div class="pb">
+            <h3>Blue butterflies, clear blue wavy</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 13 mini, iPhone 14, iPhone 16, iPhone X/XS, iPhone XR, iPhone XS Max"><b>Fits iPhone:</b> 11 Pro, 13 mini, 14, 16, X/XS, XR, XS Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#54 Blue butterflies, clear blue wavy">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 11 pro max 12 12 pro 12 mini 15 16 16 pro x/xs xr">
+          <div class="ph"><img src="cases/ip-55.jpg" alt="iPhone case: Blue lilies &amp; butterflies (smoky)" loading="lazy" width="300" height="400"><span class="no">#55</span></div>
+          <div class="pb">
+            <h3>Blue lilies &amp; butterflies (smoky)</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 mini, iPhone 15, iPhone 16, iPhone 16 Pro, iPhone X/XS, iPhone XR"><b>Fits iPhone:</b> 11 Pro, 11 Pro Max, 12, 12 Pro, 12 mini, 15, 16, 16 Pro, X/XS, XR</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#55 Blue lilies &amp; butterflies (smoky)">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="12 pro max 13 mini 14 pro 16 xs max">
+          <div class="ph"><img src="cases/ip-56.jpg" alt="iPhone case: Pink lilies &amp; orchids (clear)" loading="lazy" width="300" height="400"><span class="no">#56</span></div>
+          <div class="pb">
+            <h3>Pink lilies &amp; orchids (clear)</h3>
+            <p class="fits" title="iPhone 12 Pro Max, iPhone 13 mini, iPhone 14 Pro, iPhone 16, iPhone XS Max"><b>Fits iPhone:</b> 12 Pro Max, 13 mini, 14 Pro, 16, XS Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#56 Pink lilies &amp; orchids (clear)">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 12 mini 13 13 mini 14 14 pro max 15 16 x/xs xr">
+          <div class="ph"><img src="cases/ip-57.jpg" alt="iPhone case: Black &amp; white letters" loading="lazy" width="300" height="400"><span class="no">#57</span></div>
+          <div class="pb">
+            <h3>Black &amp; white letters</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 12 mini, iPhone 13, iPhone 13 mini, iPhone 14, iPhone 14 Pro Max, iPhone 15, iPhone 16, iPhone X/XS, iPhone XR"><b>Fits iPhone:</b> 11 Pro, 12 mini, 13, 13 mini, 14, 14 Pro Max, 15, 16, X/XS, XR</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#57 Black &amp; white letters">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 12 pro max 13 mini 14 14 pro 15 16 xs max">
+          <div class="ph"><img src="cases/ip-58.jpg" alt="iPhone case: Black stars “good night” (clear)" loading="lazy" width="300" height="400"><span class="no">#58</span></div>
+          <div class="pb">
+            <h3>Black stars “good night” (clear)</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 12 Pro Max, iPhone 13 mini, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 16, iPhone XS Max"><b>Fits iPhone:</b> 11 Pro, 12 Pro Max, 13 mini, 14, 14 Pro, 15, 16, XS Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#58 Black stars “good night” (clear)">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="13 mini 16 x/xs xs max">
+          <div class="ph"><img src="cases/ip-59.jpg" alt="iPhone case: Black &amp; white photo collage “The End”" loading="lazy" width="300" height="400"><span class="no">#59</span></div>
+          <div class="pb">
+            <h3>Black &amp; white photo collage “The End”</h3>
+            <p class="fits" title="iPhone 13 mini, iPhone 16, iPhone X/XS, iPhone XS Max"><b>Fits iPhone:</b> 13 mini, 16, X/XS, XS Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#59 Black &amp; white photo collage “The End”">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 12 12 pro 12 pro max 13 pro 14 14 pro 14 pro max 15 15 pro max">
+          <div class="ph"><img src="cases/ip-60.jpg" alt="iPhone case: Flowers pink" loading="lazy" width="300" height="400"><span class="no">#60</span></div>
+          <div class="pb">
+            <h3>Flowers pink</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Pro Max"><b>Fits iPhone:</b> 11 Pro, 12, 12 Pro, 12 Pro Max, 13 Pro, 14, 14 Pro, 14 Pro Max, 15, 15 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#60 Flowers pink">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="13 14 16 pro max 17">
+          <div class="ph"><img src="cases/ip-62.jpg" alt="iPhone case: Black flowers" loading="lazy" width="300" height="400"><span class="no">#62</span></div>
+          <div class="pb">
+            <h3>Black flowers</h3>
+            <p class="fits" title="iPhone 13, iPhone 14, iPhone 16 Pro Max, iPhone 17"><b>Fits iPhone:</b> 13, 14, 16 Pro Max, 17</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#62 Black flowers">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="iphone" data-models="11 pro 12 12 pro 13 13 pro 15 15 plus 15 pro 15 pro max 16 pro 16 pro max 17 17 pro 17 pro max">
+          <div class="ph"><img src="cases/ip-63.jpg" alt="iPhone case: Purple Magsafe" loading="lazy" width="300" height="400"><span class="no">#63</span></div>
+          <div class="pb">
+            <h3>Purple Magsafe</h3>
+            <p class="fits" title="iPhone 11 Pro, iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 15, iPhone 15 Plus, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro, iPhone 17 Pro Max"><b>Fits iPhone:</b> 11 Pro, 12, 12 Pro, 13, 13 Pro, 15, 15 Plus, 15 Pro, 15 Pro Max, 16 Pro, 16 Pro Max, 17, 17 Pro, 17 Pro Max</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="#63 Purple Magsafe">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="samsung" data-models="a16 a17 a27 a57 s22 s22 plus s22 ultra s23 s23 plus s23 ultra s24 s24 plus s24 ultra s25 plus s25 ultra s26 ultra">
+          <div class="ph"><img src="cases/sa-S1.jpg" alt="Samsung case: Clear MagSafe – White" loading="lazy" width="300" height="400"><span class="no">S1</span></div>
+          <div class="pb">
+            <h3>Clear MagSafe – White</h3>
+            <p class="fits" title="Samsung A16, Samsung A17, Samsung A27, Samsung A57, Samsung S22, Samsung S22 Plus, Samsung S22 Ultra, Samsung S23, Samsung S23 Plus, Samsung S23 Ultra, Samsung S24, Samsung S24 Plus, Samsung S24 Ultra, Samsung S25 Plus, Samsung S25 Ultra, Samsung S26 Ultra"><b>Fits Samsung:</b> A16, A17, A27, A57, S22, S22 Plus, S22 Ultra, S23, S23 Plus, S23 Ultra, S24, S24 Plus, S24 Ultra, S25 Plus, S25 Ultra, S26 Ultra</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="S1 Clear MagSafe – White">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="samsung" data-models="a16 a17 a27 s22 s22 plus s22 ultra s23 s23 plus s23 ultra s24 plus s25 s25 plus s25 ultra s26 ultra">
+          <div class="ph"><img src="cases/sa-S2.jpg" alt="Samsung case: Clear MagSafe – Blue" loading="lazy" width="300" height="400"><span class="no">S2</span></div>
+          <div class="pb">
+            <h3>Clear MagSafe – Blue</h3>
+            <p class="fits" title="Samsung A16, Samsung A17, Samsung A27, Samsung S22, Samsung S22 Plus, Samsung S22 Ultra, Samsung S23, Samsung S23 Plus, Samsung S23 Ultra, Samsung S24 Plus, Samsung S25, Samsung S25 Plus, Samsung S25 Ultra, Samsung S26 Ultra"><b>Fits Samsung:</b> A16, A17, A27, S22, S22 Plus, S22 Ultra, S23, S23 Plus, S23 Ultra, S24 Plus, S25, S25 Plus, S25 Ultra, S26 Ultra</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="S2 Clear MagSafe – Blue">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="samsung" data-models="a16 a27 s22 plus s23 s23 plus s24 s24 plus s25 plus s26 ultra">
+          <div class="ph"><img src="cases/sa-S3.jpg" alt="Samsung case: Clear MagSafe – Black" loading="lazy" width="300" height="400"><span class="no">S3</span></div>
+          <div class="pb">
+            <h3>Clear MagSafe – Black</h3>
+            <p class="fits" title="Samsung A16, Samsung A27, Samsung S22 Plus, Samsung S23, Samsung S23 Plus, Samsung S24, Samsung S24 Plus, Samsung S25 Plus, Samsung S26 Ultra"><b>Fits Samsung:</b> A16, A27, S22 Plus, S23, S23 Plus, S24, S24 Plus, S25 Plus, S26 Ultra</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="S3 Clear MagSafe – Black">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="samsung" data-models="a16 a17 a26 a27 a57 s22 s22 plus s22 ultra s23 s23 plus s23 ultra s24 s24 plus s24 ultra s25 plus s25 ultra s26 ultra">
+          <div class="ph"><img src="cases/sa-S4.jpg" alt="Samsung case: Clear MagSafe – Green" loading="lazy" width="300" height="400"><span class="no">S4</span></div>
+          <div class="pb">
+            <h3>Clear MagSafe – Green</h3>
+            <p class="fits" title="Samsung A16, Samsung A17, Samsung A26, Samsung A27, Samsung A57, Samsung S22, Samsung S22 Plus, Samsung S22 Ultra, Samsung S23, Samsung S23 Plus, Samsung S23 Ultra, Samsung S24, Samsung S24 Plus, Samsung S24 Ultra, Samsung S25 Plus, Samsung S25 Ultra, Samsung S26 Ultra"><b>Fits Samsung:</b> A16, A17, A26, A27, A57, S22, S22 Plus, S22 Ultra, S23, S23 Plus, S23 Ultra, S24, S24 Plus, S24 Ultra, S25 Plus, S25 Ultra, S26 Ultra</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="S4 Clear MagSafe – Green">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="samsung" data-models="a16 a27 a57 s22 s22 plus s22 ultra s23 s23 plus s24 s24 plus s24 ultra s25 s25 plus s25 ultra s26 ultra">
+          <div class="ph"><img src="cases/sa-S5.jpg" alt="Samsung case: Clear MagSafe – Red" loading="lazy" width="300" height="400"><span class="no">S5</span></div>
+          <div class="pb">
+            <h3>Clear MagSafe – Red</h3>
+            <p class="fits" title="Samsung A16, Samsung A27, Samsung A57, Samsung S22, Samsung S22 Plus, Samsung S22 Ultra, Samsung S23, Samsung S23 Plus, Samsung S24, Samsung S24 Plus, Samsung S24 Ultra, Samsung S25, Samsung S25 Plus, Samsung S25 Ultra, Samsung S26 Ultra"><b>Fits Samsung:</b> A16, A27, A57, S22, S22 Plus, S22 Ultra, S23, S23 Plus, S24, S24 Plus, S24 Ultra, S25, S25 Plus, S25 Ultra, S26 Ultra</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="S5 Clear MagSafe – Red">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="samsung" data-models="a16 a17 a26 a27 a57 s22 s22 plus s22 ultra s23 s23 plus s23 ultra s24 s24 plus s24 ultra s25 plus s25 ultra s26 ultra">
+          <div class="ph"><img src="cases/sa-S6.jpg" alt="Samsung case: Clear MagSafe – Navy blue" loading="lazy" width="300" height="400"><span class="no">S6</span></div>
+          <div class="pb">
+            <h3>Clear MagSafe – Navy blue</h3>
+            <p class="fits" title="Samsung A16, Samsung A17, Samsung A26, Samsung A27, Samsung A57, Samsung S22, Samsung S22 Plus, Samsung S22 Ultra, Samsung S23, Samsung S23 Plus, Samsung S23 Ultra, Samsung S24, Samsung S24 Plus, Samsung S24 Ultra, Samsung S25 Plus, Samsung S25 Ultra, Samsung S26 Ultra"><b>Fits Samsung:</b> A16, A17, A26, A27, A57, S22, S22 Plus, S22 Ultra, S23, S23 Plus, S23 Ultra, S24, S24 Plus, S24 Ultra, S25 Plus, S25 Ultra, S26 Ultra</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="S6 Clear MagSafe – Navy blue">Order</a></div>
+          </div>
+        </article>
+        <article class="pc" data-brand="samsung" data-models="a16 a17 a27 a57 s22 s22 plus s22 ultra s23 s23 plus s23 ultra s24 s24 plus s24 ultra s25 plus s25 ultra s26 ultra">
+          <div class="ph"><img src="cases/sa-S7.jpg" alt="Samsung case: Clear MagSafe – Light pink" loading="lazy" width="300" height="400"><span class="no">S7</span></div>
+          <div class="pb">
+            <h3>Clear MagSafe – Light pink</h3>
+            <p class="fits" title="Samsung A16, Samsung A17, Samsung A27, Samsung A57, Samsung S22, Samsung S22 Plus, Samsung S22 Ultra, Samsung S23, Samsung S23 Plus, Samsung S23 Ultra, Samsung S24, Samsung S24 Plus, Samsung S24 Ultra, Samsung S25 Plus, Samsung S25 Ultra, Samsung S26 Ultra"><b>Fits Samsung:</b> A16, A17, A27, A57, S22, S22 Plus, S22 Ultra, S23, S23 Plus, S23 Ultra, S24, S24 Plus, S24 Ultra, S25 Plus, S25 Ultra, S26 Ultra</p>
+            <div class="buy"><span class="price">KSh 500</span><a class="btn btn-wa btn-sm order" href="https://wa.me/254758235049" data-case="S7 Clear MagSafe – Light pink">Order</a></div>
+          </div>
+        </article>
+      </div>
+      <p class="empty" id="empty" hidden>No case in stock for that model right now. <a class="wa-ask" href="https://wa.me/254758235049">Ask us on WhatsApp</a>, new designs arrive often.</p>
+      <p class="note">Stock changes every day. We confirm your case is available when you order.</p>
+    </div>
+  </section>
+
+  <section id="order">
     <div class="wrap">
       <div class="head">
         <span class="eyebrow">How to order</span>
@@ -210,7 +796,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:.92rem}
     </div>
   </section>
 
-  <section id="where">
+  <section id="where" class="alt">
     <div class="wrap">
       <div class="head">
         <span class="eyebrow">Where to buy</span>
@@ -254,6 +840,31 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:.92rem}
   // WhatsApp links open with a ready-made message
   var msg = encodeURIComponent("Hi Fasmie! I'd like a phone case. My phone model is: ");
   document.querySelectorAll(".wa-link").forEach(function (a) { a.href = "https://wa.me/254758235049?text=" + msg; a.target = "_blank"; a.rel = "noopener"; });
+  // order buttons: WhatsApp message names the case
+  document.querySelectorAll(".order").forEach(function (a) {
+    var t = encodeURIComponent("Hi Fasmie! I'd like case " + a.dataset.case + " (KSh 500). My phone model is: ");
+    a.href = "https://wa.me/254758235049?text=" + t; a.target = "_blank"; a.rel = "noopener";
+    a.setAttribute("aria-label", "Order case " + a.dataset.case + " on WhatsApp");
+  });
+  // filters
+  var cards = [].slice.call(document.querySelectorAll(".pc")), brand = "all", find = document.getElementById("find");
+  function apply() {
+    var q = find.value.toLowerCase().replace(/iphone|samsung|galaxy/g, "").trim(), shown = 0;
+    cards.forEach(function (c) {
+      var ok = (brand === "all" || c.dataset.brand === brand) && (!q || (" " + c.dataset.models + " ").indexOf(q) > -1);
+      c.hidden = !ok; if (ok) shown++;
+    });
+    document.getElementById("count").textContent = shown + (shown === 1 ? " case" : " cases") + " · KSh 500 each";
+    document.getElementById("empty").hidden = shown > 0;
+  }
+  document.querySelectorAll(".seg button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      brand = b.dataset.f;
+      document.querySelectorAll(".seg button").forEach(function (x) { x.setAttribute("aria-pressed", x === b); });
+      apply();
+    });
+  });
+  find.addEventListener("input", apply); apply();
   document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
 </body>
